@@ -1,0 +1,103 @@
+@property --epilepsy-hue {
+    syntax: '<number>';
+    /* <- defined as type number for the transition to work */
+    initial-value: 0;
+    inherits: false;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url("images/nyan/bgunicorn.gif");
+    background-size: 300px 300px;
+}
+
+@keyframes epilepsy {
+    0% {
+        --epilepsy-hue: 0;
+    }
+
+    50% {
+        --epilepsy-hue: 360;
+    }
+
+    100% {
+        --epilepsy-hue: 0;
+    }
+}
+
+main {
+    background: hsl(var(--epilepsy-hue), 81%, 52%);
+    display: grid;
+    grid-template-columns: repeat(10, 50px);
+    grid-template-rows: repeat(10, 50px);
+    animation: epilepsy 1s infinite;
+
+}
+
+main>div {
+    border: 1px solid rgba(0, 0, 0, .1);
+    border-collapse: collapse;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    background-color: #e6e3d3;
+    padding: 2em;
+    border-radius: 20px;
+
+}
+
+.win-box {
+    display: flex;
+    justify-content: space-between;
+}
+
+#winbtn:disabled {
+    display: none;
+}
+
+/* GAME CELLS */
+
+.empty {
+    background: transparent;
+}
+
+.wall {
+    background: url("images/nyan/wallnut.gif");
+    background-size: contain;
+}
+
+.box {
+    background: url("images/nyan/caca.png");
+    background-size: contain;
+}
+
+.player {
+    background: url("images/nyan/unicorn.gif");
+    background-size: contain;
+}
+
+.playerongoal {
+    background: url("images/nyan/unicorn.gif");
+    background-size: contain;
+    background-color: #0e87cc;
+}
+
+.goal {
+    background: url("images/nyan/toilet.jpg");
+    background-size: contain;
+
+}
+
+.boxongoal {
+    background: url("images/nyan/caca.png");
+    background-size: contain;
+    background-color: #0e87cc;
+}

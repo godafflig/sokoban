@@ -1,57 +1,73 @@
 body {
-    margin: 0;
-    padding: 0;
-    background: #e6e3d3;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  
-  main {
-    display: grid;
-    grid-template-columns: repeat(10, 50px);
-    grid-template-rows: repeat(10, 50px);
-  }
-  
-  main > div {
-    border: 1px solid black;
-    border-collapse: collapse;
-  }
-  
-  .win-box {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  #winbtn:disabled {
-    display: none;
-  }
-  
-  /* GAME CELLS */
-  
-  .empty {
-    background: transparent;
-  }
-  .wall {
-    background: black;
-  }
-  .box {
-    background: brown;
-  }
-  .player,
-  .playerongoal {
-    background: url("images/unicorn3.gif");
-    background-size: contain;
-  }
-  .goal {
-    background: red;
-  }
-  .boxongoal {
-    background: violet;
-  }
-  /* .playerongoal {
-    background: orange;
-  }
-   */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(10, 50px);
+  grid-template-rows: repeat(10, 50px);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  background-color: #e6e3d3;
+  padding: 2em;
+  border-radius: 20px;
+
+}
+
+.win-box {
+  display: flex;
+  justify-content: space-between;
+}
+
+#winbtn:disabled {
+  display: none;
+}
+
+/* GAME CELLS */
+
+.empty {
+  background: url("images/empty.png");
+  background-size: contain;
+}
+
+.wall {
+  background: url("images/wall.png");
+  background-size: contain;
+}
+
+.box {
+  background: url("images/box.png");
+  background-size: contain;
+}
+
+.player {
+  background: url("images/player.png");
+  background-size: contain;
+}
+
+.playerongoal {
+  background: url("images/player.png");
+  background-size: contain;
+
+}
+
+.goal {
+  background: url("images/goal.png");
+  background-size: contain;
+
+}
+
+.boxongoal {
+  background: url("images/boxongoal.png");
+  background-size: contain;
+
+}
